@@ -1,22 +1,25 @@
-# **🎬Rockstar Editor Menu — FiveM Script (Standalone + ox_lib)**
-This is a simple and clean Rockstar Editor Menu for FiveM, built using ox_lib and fully standalone — no other framework required.
+# Rockstar Editor Menu for FiveM
 
+SVRecord adds a Rockstar Editor recording menu to FiveM using `ox_lib`. It requires no additional framework.
 
-#💡 Features:
+## Installation
 
-- 📹 Start Recording — begin recording gameplay anytime
+1. Install [ox_lib](https://github.com/overextended/ox_lib/releases) in your FiveM server's resources directory.
+2. Copy the repository into the resources directory as `SVRecord`, with `fxmanifest.lua` at the root of that folder.
+3. Add these lines to `server.cfg`, keeping `ox_lib` first.
 
-- ⏹ Stop & Save — stop the recording and save it to the editor
+```cfg
+ensure ox_lib
+ensure SVRecord
+```
 
-- 🗑 Stop & Delete — cancel the recording and delete the clip
+4. Restart the server, join it, and run `/recordmenu` in chat or press `F9`.
 
-- 🎞 Open Rockstar Editor — quickly access the built-in editor menu
+## Recording controls
 
-🚀 Additional Controls:
-- Command: /recordmenu
-Opens the Rockstar Editor menu via chat command for quick access without needing to use keybinds.
+- **Start Recording** starts a clip.
+- **Stop and Save** ends the recording and saves the clip.
+- **Stop and Discard** ends the recording and deletes the clip.
+- **Open Rockstar Editor** opens the built-in editor where supported.
 
-- Keybind: F9
-Instantly opens the Rockstar Editor menu with a single key press, making it easy to start/stop recording or manage clips while in-game.
-
-This script is perfect if you want to create cinematic scenes or clips easily while in-game. It’s lightweight, user-friendly, and works out of the box with ox_lib context menus.
+If the menu does not open, check the server console for resource startup errors. Try `/recordmenu` if `F9` conflicts with another keybind. Stopping or restarting `SVRecord` while it is recording discards the active clip. Save it from the menu first if you want to keep it.
